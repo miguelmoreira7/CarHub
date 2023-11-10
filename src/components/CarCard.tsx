@@ -1,7 +1,7 @@
 import { Car } from "../types"
 import {useState} from 'react'
 import { CarDetails, CustomButton } from ".";
-import { calculateCarRent } from "../utils";
+import { calculateCarRent, generateImageUrl } from "../utils";
 
 
 interface CarCardProps {
@@ -31,7 +31,7 @@ const CarCard = ({car}: CarCardProps) => {
                 /day
             </span>
         </p>
-        <img src="/hero.png" alt="car model" className="car-card__image"/>
+        <img src={generateImageUrl(car)} alt="car model" className="car-card__image"/>
         <div className="relative flex w-full mt-2">
             <div className="car-card__icon-container">
                 <div className="car-card__icon">
