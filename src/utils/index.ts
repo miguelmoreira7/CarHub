@@ -1,7 +1,8 @@
+import { apiKey } from "./apikey";
 
 export async function fetchCars() {
     const headers = {
-		'X-RapidAPI-Key': '87c91ded81msha0bf0e3eaaec8a9p11581ajsn12ee4ae45127',
+		'X-RapidAPI-Key': `${apiKey}`,
 		'X-RapidAPI-Host': 'cars-by-api-ninjas.p.rapidapi.com'
 	}
 	const response = await fetch('https://cars-by-api-ninjas.p.rapidapi.com/v1/cars?model=corolla', {
