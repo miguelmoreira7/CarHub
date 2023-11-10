@@ -1,7 +1,7 @@
 import { CustomButtonProps } from "../types"
 
 
-const CustomButton = ({ title, containerStyles, handleClick, btnType }: CustomButtonProps) => {
+const CustomButton = ({ title, containerStyles, handleClick, btnType, textStyles, rightIcon }: CustomButtonProps) => {
   return (
     <button
     disabled={false}
@@ -9,10 +9,12 @@ const CustomButton = ({ title, containerStyles, handleClick, btnType }: CustomBu
     className={`custom-btn ${containerStyles}`}
     onClick={handleClick}
     >
-        <span className={`flex-1`}>
+        <span className={`flex-1 ${textStyles}`}>
             {title}
         </span>
-
+            {rightIcon && (
+              <img src={rightIcon} alt="right icon" className="relative w-6 h-6 object-contain" />
+            )}
     </button>
   )
 }
