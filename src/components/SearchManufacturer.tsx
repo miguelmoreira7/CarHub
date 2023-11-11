@@ -22,7 +22,7 @@ const SearchManufacturer = ({manufacturer, setManufacturer}: SearchManufacturerP
                     <img src="/car-logo.svg" alt="Car Logo" className="h-5 w-5 ml-4" />
                 </Combobox.Button>
                 <Combobox.Input className="search-manufacturer__input"
-                placeholder="Volkswagen"
+                placeholder="Manufacturer"
                 displayValue={(manufacturer: string) => manufacturer}
                 onChange={(e) => setQuery(e.target.value)}/>
                 <Transition as={Fragment}
@@ -30,7 +30,7 @@ const SearchManufacturer = ({manufacturer, setManufacturer}: SearchManufacturerP
                 leaveFrom="opacity-100"
                 leaveTo="opacity-0"
                 afterLeave={() => setQuery('')}>
-                    <Combobox.Options>
+                    <Combobox.Options className="search-manufacturer__options">
                         {filteredManufacturers.map((item) => (
                                 <Combobox.Option
                                 key={item}

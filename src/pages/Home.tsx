@@ -1,20 +1,23 @@
 import { useEffect, useState } from "react"
 import { CustomFilter, Hero, SearchBar, CarCard } from "../components"
 import { fetchCars } from "../utils"
-import {Car} from "../types/index"
+import { Car } from "../types/index"
+import { useSearchParams } from "react-router-dom"
 
 
 const Home = () => {
-  
-  const [cars, setCars] = useState<Car[]>([])
+
+  const [cars, setCars] = useState<Car[]>([]);
+  const [searchParams] = useSearchParams()
 
   const getCars = async () => {
-    await fetchCars().then(data => setCars(data))
-  }
+    await fetchCars(searchParams).then(data => setCars(data))
+  };
   
   useEffect(() => {
-    getCars()
-  }, [])
+    getCars();
+    
+  }, [searchParams]);
 
   const isDataEmpty = cars.length === 0 || !cars
 
@@ -34,7 +37,7 @@ const Home = () => {
           {!isDataEmpty ? (
             <section>
               <div className="home__cars-wrapper">
-                {cars?.map((car) => (<CarCard car={car}/>))}
+                {cars?.map((car, index) => (<CarCard car={car} key={index}/>))}
               </div>
             </section>
           ):(

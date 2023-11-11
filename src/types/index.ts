@@ -30,3 +30,11 @@ export type Car = {
     year: number;
 }
 
+export interface FilterProps {
+    manufacturer: string;
+    model: string;
+    year: string;
+    fuel: string;
+    limit: string;
+}
+
