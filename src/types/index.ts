@@ -38,3 +38,12 @@ export interface FilterProps {
     limit: string;
 }
 
+export interface FuelOptions {
+    title: string;
+    value: string;
+}
+
+export interface CustomnFilterProps {
+    title: string;
+    options: FuelOptions[];
+}

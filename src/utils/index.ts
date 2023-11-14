@@ -9,10 +9,10 @@ export const fetchCars = async (searchParams: URLSearchParams) => {
 	}
 	const response = await fetch(
 		`https://cars-by-api-ninjas.p.rapidapi.com/v1/cars?make=${searchParams.get('manufacturer') || ''}
-		&year=${searchParams.get('year') || '2022'}
+		&year=${searchParams.get('Year') || '2022'}
 		&model=${searchParams.get('model') || ''}
 		&limit=${searchParams.get('limit') || '18'}
-		&fuel_type=${searchParams.get('fuel') || ''}`, {
+		&fuel_type=${searchParams.get('Fuel') || ''}`, {
 		headers: headers,
 	});
 	

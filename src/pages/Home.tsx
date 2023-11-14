@@ -3,6 +3,7 @@ import { CustomFilter, Hero, SearchBar, CarCard } from "../components"
 import { fetchCars } from "../utils"
 import { Car } from "../types/index"
 import { useSearchParams } from "react-router-dom"
+import { fuels, yearsOfProduction } from "../constants"
 
 
 const Home = () => {
@@ -31,7 +32,9 @@ const Home = () => {
           </div>
           <div className="home__filters">
             <SearchBar />
-            <div className="home__filter-container">            
+            <div className="home__filter-container">  
+            <CustomFilter title ="Fuel" options = {fuels}/>          
+            <CustomFilter title ="Year" options = {yearsOfProduction}/>          
             </div>
           </div>
           {!isDataEmpty ? (
@@ -43,7 +46,6 @@ const Home = () => {
           ):(
             <div className="home__error-container">
               <h2 className="tect-black text-xl font-bold">Oops, no results</h2>
-              <p>a</p>
             </div>
           )}
         </div>
